@@ -1,10 +1,9 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 import Chart from 'chart.js/auto';
 
 @customElement('frequency-chart')
 export class FrequencyChart extends LitElement {
-  @state() private chartData: any = null;
   private chartInstance: Chart | null = null;
 
   render() {
