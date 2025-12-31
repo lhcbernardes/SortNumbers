@@ -69,8 +69,9 @@ export class BetGenerator extends LitElement {
     this.result = null;
 
     try {
-      // Assuming Flask running on port 3000
-      const response = await fetch('http://127.0.0.1:3000/api/generate', {
+      // Use environment variable for API URL or fallback to localhost
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:3000';
+      const response = await fetch(`${apiUrl}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ n: this.selectedAmount })

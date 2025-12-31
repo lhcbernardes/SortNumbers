@@ -24,8 +24,9 @@ export class FrequencyChart extends LitElement {
 
   async fetchStatistics() {
     try {
-      // Assuming Flask running on port 3000
-      const response = await fetch('http://127.0.0.1:3000/api/statistics');
+      // Use environment variable for API URL or fallback to localhost
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:3000';
+      const response = await fetch(`${apiUrl}/api/statistics`);
       const data = await response.json();
       this.initChart(data);
     } catch (error) {
