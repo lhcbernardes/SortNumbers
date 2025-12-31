@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import './frequency-chart';
 import './bet-generator';
+import './info-modal';
 
 @customElement('my-app')
 export class MyApp extends LitElement {
@@ -23,6 +24,8 @@ export class MyApp extends LitElement {
           <frequency-chart></frequency-chart>
           <bet-generator></bet-generator>
         </main>
+
+        <info-modal></info-modal>
       </div>
     `;
   }
